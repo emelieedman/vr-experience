@@ -15,6 +15,10 @@
       shadow="enabled: true;"
     >
       <a-assets>
+        <audio
+          id="alien-sound"
+          src="assets/alien-spaceship_daniel_simion.mp3"
+        ></audio>
         <img
           id="sandColor"
           src="https://cdn.glitch.com/57e3ecb1-bd80-406b-90eb-b1d1fd2194e5%2FSand_004_COLOR.png?v=1590740118374"
@@ -426,6 +430,7 @@
         geometry=""
         animation="property: rotation; easing: linear; dir: normal; dur: 10000; loop: true; from: 0 0 0; to: 0 360 0"
         animation__click=" startEvents: click; property: position; easing: linear; dir: alternate; dur: 5000; loop: true; to: -10 4 -7"
+        sound="on: click; src: #alien-sound"
       ></a-octahedron>
       <a-octahedron
         class="glowingDiamond"
@@ -438,6 +443,7 @@
         geometry=""
         animation="property: rotation; easing: linear; dir: normal; dur: 10000; loop: true; from: 0 0 0; to: 0 360 0"
         animation__click=" startEvents: click; property: position; easing: linear; dir: alternate; dur: 5000; loop: true; to: -0.964 4 25.463"
+        sound="on: click; src: #alien-sound"
       ></a-octahedron>
       <a-octahedron
         class="glowingDiamond"
@@ -450,6 +456,7 @@
         geometry=""
         animation="property: rotation; easing: linear; dir: normal; dur: 10000; loop: true; from: 0 0 0; to: 0 360 0"
         animation__click=" startEvents: click; property: position; easing: linear; dir: alternate; dur: 5000; loop: true; to: 6 4 17"
+        sound="on: click; src: #alien-sound"
       ></a-octahedron>
     </a-scene>
   </body>
