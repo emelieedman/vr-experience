@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Hello!</title>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="./index.js"></script>
+  </head>
+  <body>
+    <a-scene
+      fog="type: linear; color:#ffd6ad; far: 50; near: 3"
+      shadow="enabled: true;"
+    >
+      <a-assets>
+        <img
+          id="sandColor"
+          src="https://cdn.glitch.com/57e3ecb1-bd80-406b-90eb-b1d1fd2194e5%2FSand_004_COLOR.png?v=1590740118374"
+          alt=""
+        />
+        <img
+          id="sandHeight"
+          src="https://cdn.glitch.com/57e3ecb1-bd80-406b-90eb-b1d1fd2194e5%2FSand_004_Height.png?v=1590740132321"
+          alt=""
+        />
+        <img
+          id="sandNormal"
+          src="https://cdn.glitch.com/57e3ecb1-bd80-406b-90eb-b1d1fd2194e5%2FSand_004_Normal.png?v=1590740157832"
+          alt=""
+        />
+        <img
+          id="sandOCC"
+          src="https://cdn.glitch.com/57e3ecb1-bd80-406b-90eb-b1d1fd2194e5%2FSand_004_OCC.png?v=1590740173091"
+          alt=""
+        />
+        <img
+          id="sandRough"
+          src="https://cdn.glitch.com/57e3ecb1-bd80-406b-90eb-b1d1fd2194e5%2FSand_004_ROUGH.png?v=1590740198199"
+          alt=""
+        />
+        <img
+          id="metalOCC"
+          src="https://cdn.glitch.com/57e3ecb1-bd80-406b-90eb-b1d1fd2194e5%2FMetal_Plate_017_ambientOcclusion.jpg?v=1590748278812"
+        />
+        <img
+          id="metalColor"
+          src="https://cdn.glitch.com/57e3ecb1-bd80-406b-90eb-b1d1fd2194e5%2FMetal_Plate_017_basecolor.jpg?v=1590748281280"
+        />
+        <img
+          id="metalEmissive"
+          src="https://cdn.glitch.com/57e3ecb1-bd80-406b-90eb-b1d1fd2194e5%2FMetal_Plate_017_emissive.jpg?v=1590748285660"
+        />
+        <img
+          id="metalHeight"
+          src="https://cdn.glitch.com/57e3ecb1-bd80-406b-90eb-b1d1fd2194e5%2FMetal_Plate_017_height.png?v=1590748290122"
+        />
+        <img
+          id="metalMetalic"
+          src="https://cdn.glitch.com/57e3ecb1-bd80-406b-90eb-b1d1fd2194e5%2FMetal_Plate_017_metallic.jpg?v=1590748294286"
+        />
+        <img
+          id="metalNormal"
+          src="https://cdn.glitch.com/57e3ecb1-bd80-406b-90eb-b1d1fd2194e5%2FMetal_Plate_017_normal.jpg?v=1590748299446"
+        />
+        <img
+          id="metalOpacity"
+          src="https://cdn.glitch.com/57e3ecb1-bd80-406b-90eb-b1d1fd2194e5%2FMetal_Plate_017_Opacity.jpg?v=1590748310084"
+        />
+        <img
+          id="metalRough"
+          src="https://cdn.glitch.com/57e3ecb1-bd80-406b-90eb-b1d1fd2194e5%2FMetal_Plate_017_roughness.jpg?v=1590748313689"
+        />
+        <img
+          id="sky"
+          src="https://cdn.glitch.com/57e3ecb1-bd80-406b-90eb-b1d1fd2194e5%2Fvp_sky_v3_047.jpg?v=1590751614982"
+        />
+        <img
+          id="techOCC"
+          src="https://cdn.glitch.com/57e3ecb1-bd80-406b-90eb-b1d1fd2194e5%2FGreeble_Techno_002_ambientOcclusion.jpg?v=1590761366305"
+        />
+        <img
+          id="techColor"
+          src="https://cdn.glitch.com/57e3ecb1-bd80-406b-90eb-b1d1fd2194e5%2FGreeble_Techno_002_basecolor.jpg?v=1590761374245"
+        />
+        <img
+          id="techMetalic"
+          src="https://cdn.glitch.com/57e3ecb1-bd80-406b-90eb-b1d1fd2194e5%2FGreeble_Techno_002_metallic.jpg?v=1590761383084"
+        />
+        <img
+          id="techNormal"
+          src="https://cdn.glitch.com/57e3ecb1-bd80-406b-90eb-b1d1fd2194e5%2FGreeble_Techno_002_normal.jpg?v=1590761398369"
+        />
+        <img
+          id="techRough"
+          src="https://cdn.glitch.com/57e3ecb1-bd80-406b-90eb-b1d1fd2194e5%2FGreeble_Techno_002_roughness.jpg?v=1590761412122"
+        />
+        <img
+          id="metalWallOCC"
+          src="https://cdn.glitch.com/57e3ecb1-bd80-406b-90eb-b1d1fd2194e5%2FMetal_Plate_026_ambientOcclusion.jpg?v=1590764525852"
+        />
+        <img
+          id="metalWallColor"
+          src="https://cdn.glitch.com/57e3ecb1-bd80-406b-90eb-b1d1fd2194e5%2FMetal_Plate_026_basecolor.jpg?v=1590764535850"
+        />
+        <img
+          id="metalWallMetalic"
+          src="https://cdn.glitch.com/57e3ecb1-bd80-406b-90eb-b1d1fd2194e5%2FMetal_Plate_026_metallic.jpg?v=1590764556709"
+        />
+        <img
+          id="metalWallNormal"
+          src="https://cdn.glitch.com/57e3ecb1-bd80-406b-90eb-b1d1fd2194e5%2FMetal_Plate_026_normal.jpg?v=1590764566403"
+        />
+        <img
+          id="metalWallRough"
+          src="https://cdn.glitch.com/57e3ecb1-bd80-406b-90eb-b1d1fd2194e5%2FMetal_Plate_026_roughness.jpg?v=1590764576278"
+        />
+        <img
+          id="metal012OCC"
+          src="https://cdn.glitch.com/57e3ecb1-bd80-406b-90eb-b1d1fd2194e5%2FMetal_Plate_012_ambientOcclusion.jpg?v=1591039059228"
+        />
+        <img
+          id="metal012Color"
+          src="https://cdn.glitch.com/57e3ecb1-bd80-406b-90eb-b1d1fd2194e5%2FMetal_Plate_012_basecolor.jpg?v=1591039072707"
+        />
+        <img
+          id="metal012Metalic"
+          src="https://cdn.glitch.com/57e3ecb1-bd80-406b-90eb-b1d1fd2194e5%2FMetal_Plate_012_metallic.jpg?v=1591039081234"
+        />
+        <img
+          id="metal012Normal"
+          src="https://cdn.glitch.com/57e3ecb1-bd80-406b-90eb-b1d1fd2194e5%2FMetal_Plate_012_normal.jpg?v=1591039084771"
+        />
+        <img
+          id="metal012Rough"
+          src="https://cdn.glitch.com/57e3ecb1-bd80-406b-90eb-b1d1fd2194e5%2FMetal_Plate_012_roughness.jpg?v=1591039419155"
+        />
+        <img
+          id="purpleOCC"
+          src="https://cdn.glitch.com/57e3ecb1-bd80-406b-90eb-b1d1fd2194e5%2FMetal_Plate_040_ambientOcclusion.jpg?v=1591040217125"
+        />
+        <img
+          id="purpleColor"
+          src="https://cdn.glitch.com/57e3ecb1-bd80-406b-90eb-b1d1fd2194e5%2FMetal_Plate_040_basecolor.jpg?v=1591040224904"
+        />
+        <img
+          id="purpleMetalic"
+          src="https://cdn.glitch.com/57e3ecb1-bd80-406b-90eb-b1d1fd2194e5%2FMetal_Plate_040_metallic.jpg?v=1591040382154"
+        />
+        <img
+          id="purpleNormal"
+          src="https://cdn.glitch.com/57e3ecb1-bd80-406b-90eb-b1d1fd2194e5%2FMetal_Plate_040_normal.jpg?v=1591040238817"
+        />
+        <img
+          id="purpleRough"
+          src="https://cdn.glitch.com/57e3ecb1-bd80-406b-90eb-b1d1fd2194e5%2FMetal_Plate_040_roughness.jpg?v=1591040242315"
+        />
+        <img
+          id="dirtOCC"
+          src="https://cdn.glitch.com/57e3ecb1-bd80-406b-90eb-b1d1fd2194e5%2FGround_Dirt_008_ambientOcclusion.jpg?v=1591042984409"
+        />
+        <img
+          id="dirtColor"
+          src="https://cdn.glitch.com/57e3ecb1-bd80-406b-90eb-b1d1fd2194e5%2FGround_Dirt_008_baseColor.jpg?v=1591042988563"
+        />
+        <img
+          id="dirtNormal"
+          src="https://cdn.glitch.com/57e3ecb1-bd80-406b-90eb-b1d1fd2194e5%2FGround_Dirt_008_normal.jpg?v=1591043003525"
+        />
+        <img
+          id="dirtRough"
+          src="https://cdn.glitch.com/57e3ecb1-bd80-406b-90eb-b1d1fd2194e5%2FGround_Dirt_008_roughness.jpg?v=1591043018617"
+        />
+      </a-assets>
+      <!-- camera & cursor -->
+      <a-camera position="0 1.7 5">
+        <a-cursor color="#ff7b00"></a-cursor>
+      </a-camera>
+      <!-- sunlight -->
+      <a-entity
+        id="sunlight"
+        position="-11.231 7.205 0.063"
+        light="type: directional; castShadow: true; color: #ffa678"
+        color="#ffa678"
+      ></a-entity>
+      <!-- sky -->
+      <a-sky src="#sky"></a-sky>
+      <!-- ground -->
+      <a-plane
+        id="ground"
+        scale="100, 100, 100"
+        rotation="-90 0 0"
+        width="40"
+        height="40"
+        color="#d9cbab"
+        material="color: #FFF; normalMap:#sandNormal; src:#sandColor; ambientOcclusionMap:#sandOCC; roughnessMap:#sandRough; repeat: 100, 100;"
+      ></a-plane>
+      <!-- platform -->
+      <a-cylinder
+        id="platform"
+        position="-10 0 -7"
+        radius="6"
+        height="1"
+        shadow="receive: true;"
+        material="normalMap:#metal012Normal;src:#metal012Color;ambientOcclusionMap:#metal012OCC;roughnessMap:#metal012Rough; metalness: 1; roughness:0.3; sphericalEnvMap: #sky;"
+      ></a-cylinder>
+      <!-- round metal structure -->
+      <a-entity class="roundMetalStructure">
+        <a-box
+          position="-4.039 28.000 -12.125"
+          material="normalMap:#metalNormal; src: #metalColor; ambientOcclusionMap:#metalOCC; roughnessMap:#metalRough; metalnessMap: #metalMetalic; roughness:1; ambientOcclusionMapIntensity: 0.96;  metalness: 1; sphericalEnvMap: #sky; repeat: 1 10"
+          geometry="depth: 0.5; height: 80; width: 10"
+          rotation="0 126.460 0"
+        ></a-box>
+        <a-box
+          position="-13.239 28.000 -14.603"
+          material="normalMap:#metalNormal; src: #metalColor; ambientOcclusionMap:#metalOCC; roughnessMap:#metalRough; metalnessMap: #metalMetalic; roughness:1; ambientOcclusionMapIntensity: 0.96;  metalness: 1; sphericalEnvMap: #sky; repeat: 1 10"
+          geometry="depth: 0.5; height: 80; width: 10"
+          rotation="0 200 0"
+        ></a-box>
+        <a-box
+          position="-18.858 26.027 -7.032"
+          material="normalMap:#metalNormal; src: #metalColor; ambientOcclusionMap:#metalOCC; roughnessMap:#metalRough; metalnessMap: #metalMetalic; roughness:1; ambientOcclusionMapIntensity: 0.96;  metalness: 1; sphericalEnvMap: #sky; repeat: 1 10"
+          geometry="depth: 0.5; height: 80; width: 10"
+          rotation="0 269 0"
+        ></a-box>
+        <a-box
+          position="-13.290 25.614 0.543"
+          material="normalMap:#metalNormal; src: #metalColor; ambientOcclusionMap:#metalOCC; roughnessMap:#metalRough; metalnessMap: #metalMetalic; roughness:1; ambientOcclusionMapIntensity: 0.96;  metalness: 1; sphericalEnvMap: #sky; repeat: 1 10"
+          geometry="depth: 0.5; height: 80; width: 10"
+          rotation="0 -21.600 0"
+        ></a-box>
+        <a-box
+          position="-3.925 28.000 -2.595"
+          material="normalMap:#metalNormal; src: #metalColor; ambientOcclusionMap:#metalOCC; roughnessMap:#metalRough; metalnessMap: #metalMetalic; roughness:1; ambientOcclusionMapIntensity: 0.96;  metalness: 1; sphericalEnvMap: #sky; repeat: 1 10"
+          geometry="depth: 0.5; height: 80; width: 10"
+          rotation="0 54.980 0"
+        ></a-box>
+      </a-entity>
+      <!-- metal structure -->
+      <a-entity class="metalStructure" position="-17.404 -2.958 9.418">
+        <a-box
+          position="7.049 0.013 7.111"
+          material="normalMap:#metalNormal; src: #metalColor; ambientOcclusionMap:#metalOCC; roughnessMap:#metalRough; metalnessMap: #metalMetalic; roughness:1; ambientOcclusionMapIntensity: 0.96;  metalness: 1; sphericalEnvMap: #sky"
+          geometry="depth: 0.5; height: 10; width: 10"
+          rotation="9.700 29.990 9.250"
+        ></a-box>
+        <a-box
+          position="10.621 -0.947 -4.845"
+          material="normalMap:#metalNormal; src: #metalColor; ambientOcclusionMap:#metalOCC; roughnessMap:#metalRough; metalnessMap: #metalMetalic; roughness:1; ambientOcclusionMapIntensity: 0.96;  metalness: 1; sphericalEnvMap: #sky"
+          geometry="depth: 0.5; height: 10; width: 10"
+          rotation="9.700 29.990 9.250"
+        ></a-box>
+        <a-box
+          position="15.151 11.296 4.648"
+          material="normalMap:#metalNormal; src: #metalColor; ambientOcclusionMap:#metalOCC; roughnessMap:#metalRough; metalnessMap: #metalMetalic; roughness:1; ambientOcclusionMapIntensity: 0.96;  metalness: 1; sphericalEnvMap: #sky"
+          geometry="depth: 0.5; height: 10; width: 10"
+          rotation="9.700 29.990 9.250"
+        ></a-box>
+        <a-box
+          position="6.494 9.694 9.317
+"
+          material="normalMap:#metalNormal; src: #metalColor; ambientOcclusionMap:#metalOCC; roughnessMap:#metalRough; metalnessMap: #metalMetalic; roughness:1; ambientOcclusionMapIntensity: 0.96;  metalness: 1; sphericalEnvMap: #sky"
+          geometry="depth: 0.5; height: 10; width: 10"
+          rotation="9.700 29.990 9.250"
+        ></a-box>
+        <a-box
+          position="17.249 15.844 10.032"
+          material="normalMap:#metalNormal; src: #metalColor; ambientOcclusionMap:#metalOCC; roughnessMap:#metalRough; metalnessMap: #metalMetalic; roughness:1; ambientOcclusionMapIntensity: 0.96;  metalness: 1; sphericalEnvMap: #sky"
+          geometry="depth: 0.5; height: 10; width: 10"
+          rotation="80.870 126.710 8.050"
+        ></a-box>
+        <a-box
+          position="8.631 14.276 14.738"
+          material="normalMap:#metalNormal; src: #metalColor; ambientOcclusionMap:#metalOCC; roughnessMap:#metalRough; metalnessMap: #metalMetalic; roughness:1; ambientOcclusionMapIntensity: 0.96;  metalness: 1; sphericalEnvMap: #sky"
+          geometry="depth: 0.5; height: 10; width: 10"
+          rotation="80.870 126.710 8.050"
+        ></a-box>
+        <a-box
+          position="13.391 14.046 23.431"
+          material="normalMap:#metalNormal; src: #metalColor; ambientOcclusionMap:#metalOCC; roughnessMap:#metalRough; metalnessMap: #metalMetalic; roughness:1; ambientOcclusionMapIntensity: 0.96;  metalness: 1; sphericalEnvMap: #sky"
+          geometry="depth: 0.5; height: 10; width: 10"
+          rotation="80.870 126.710 8.050"
+        ></a-box>
+        <a-box
+          position="21.935 15.615 18.763"
+          material="normalMap:#metalNormal; src: #metalColor; ambientOcclusionMap:#metalOCC; roughnessMap:#metalRough; metalnessMap: #metalMetalic; roughness:1; ambientOcclusionMapIntensity: 0.96;  metalness: 1; sphericalEnvMap: #sky"
+          geometry="depth: 0.5; height: 10; width: 10"
+          rotation="80.870 126.710 8.050"
+        ></a-box>
+        <a-box
+          position="25.377 10.750 23.444"
+          material="normalMap:#metalNormal; src: #metalColor;ambientOcclusionMap:#metalOCC; roughnessMap:#metalRough; metalnessMap: #metalMetalic; roughness:1; ambientOcclusionMapIntensity: 0.96;  metalness: 1; sphericalEnvMap: #sky"
+          geometry="depth: 0.5; height: 10; width: 10"
+          rotation="-9.110 27.240 9.310"
+        ></a-box>
+        <a-box
+          position="16.738 9.175 28.151"
+          material="normalMap:#metalNormal; src: #metalColor; ambientOcclusionMap:#metalOCC; roughnessMap:#metalRough; metalnessMap: #metalMetalic; roughness:1; ambientOcclusionMapIntensity: 0.96;  metalness: 1; sphericalEnvMap: #sky"
+          geometry="depth: 0.5; height: 10; width: 10"
+          rotation="-9.110 27.240 9.310"
+        ></a-box>
+        <a-box
+          position="18.820 -0.212 28.775"
+          material="normalMap:#metalNormal; src: #metalColor; ambientOcclusionMap:#metalOCC; roughnessMap:#metalRough; metalnessMap: #metalMetalic; roughness:1; ambientOcclusionMapIntensity: 0.96;  metalness: 1; sphericalEnvMap: #sky"
+          geometry="depth: 0.5; height: 10; width: 10"
+          rotation="-9.110 27.240 9.310"
+        ></a-box>
+        <a-box
+          position="27.539 1.007 24.088"
+          material="normalMap:#metalNormal; src: #metalColor; ambientOcclusionMap:#metalOCC; roughnessMap:#metalRough; metalnessMap: #metalMetalic; roughness:1; ambientOcclusionMapIntensity: 0.96;  metalness: 1; sphericalEnvMap: #sky"
+          geometry="depth: 0.5; height: 10; width: 10"
+          rotation="-9.110 27.240 9.310"
+        ></a-box>
+      </a-entity>
+      <a-entity class="metalStructure" position="-0.217 0.163 0.086">
+        <a-box
+          position="7.049 0.013 7.111"
+          material="normalMap:#metalNormal; src: #metalColor; ambientOcclusionMap:#metalOCC; roughnessMap:#metalRough; metalnessMap: #metalMetalic; roughness:1; ambientOcclusionMapIntensity: 0.96;  metalness: 1; sphericalEnvMap: #sky"
+          geometry="depth: 0.5; height: 10; width: 10"
+          rotation="9.700 29.990 9.250"
+        ></a-box>
+        <a-box
+          position="15.717 1.6 2.383"
+          material="normalMap:#metalNormal; src: #metalColor; ambientOcclusionMap:#metalOCC; roughnessMap:#metalRough; metalnessMap: #metalMetalic; roughness:1; ambientOcclusionMapIntensity: 0.96;  metalness: 1; sphericalEnvMap: #sky"
+          geometry="depth: 0.5; height: 10; width: 10"
+          rotation="9.700 29.990 9.250"
+        ></a-box>
+        <a-box
+          position="15.151 11.296 4.648"
+          material="normalMap:#metalNormal; src: #metalColor; ambientOcclusionMap:#metalOCC; roughnessMap:#metalRough; metalnessMap: #metalMetalic; roughness:1; ambientOcclusionMapIntensity: 0.96;  metalness: 1; sphericalEnvMap: #sky"
+          geometry="depth: 0.5; height: 10; width: 10"
+          rotation="9.700 29.990 9.250"
+        ></a-box>
+        <a-box
+          position="6.494 9.694 9.317
+"
+          material="normalMap:#metalNormal; src: #metalColor; ambientOcclusionMap:#metalOCC; roughnessMap:#metalRough; metalnessMap: #metalMetalic; roughness:1; ambientOcclusionMapIntensity: 0.96;  metalness: 1; sphericalEnvMap: #sky"
+          geometry="depth: 0.5; height: 10; width: 10"
+          rotation="9.700 29.990 9.250"
+        ></a-box>
+        <a-box
+          position="17.249 15.844 10.032"
+          material="normalMap:#metalNormal; src: #metalColor; ambientOcclusionMap:#metalOCC; roughnessMap:#metalRough; metalnessMap: #metalMetalic; roughness:1; ambientOcclusionMapIntensity: 0.96;  metalness: 1; sphericalEnvMap: #sky"
+          geometry="depth: 0.5; height: 10; width: 10"
+          rotation="80.870 126.710 8.050"
+        ></a-box>
+        <a-box
+          position="8.631 14.276 14.738"
+          material="normalMap:#metalNormal; src: #metalColor; ambientOcclusionMap:#metalOCC; roughnessMap:#metalRough; metalnessMap: #metalMetalic; roughness:1; ambientOcclusionMapIntensity: 0.96;  metalness: 1; sphericalEnvMap: #sky"
+          geometry="depth: 0.5; height: 10; width: 10"
+          rotation="80.870 126.710 8.050"
+        ></a-box>
+        <a-box
+          position="13.391 14.046 23.431"
+          material="normalMap:#metalNormal; src: #metalColor; ambientOcclusionMap:#metalOCC; roughnessMap:#metalRough; metalnessMap: #metalMetalic; roughness:1; ambientOcclusionMapIntensity: 0.96;  metalness: 1; sphericalEnvMap: #sky"
+          geometry="depth: 0.5; height: 10; width: 10"
+          rotation="80.870 126.710 8.050"
+        ></a-box>
+        <a-box
+          position="21.935 15.615 18.763"
+          material="normalMap:#metalNormal; src: #metalColor; ambientOcclusionMap:#metalOCC; roughnessMap:#metalRough; metalnessMap: #metalMetalic; roughness:1; ambientOcclusionMapIntensity: 0.96;  metalness: 1; sphericalEnvMap: #sky"
+          geometry="depth: 0.5; height: 10; width: 10"
+          rotation="80.870 126.710 8.050"
+        ></a-box>
+        <a-box
+          position="25.377 10.750 23.444"
+          material="normalMap:#metalNormal; src: #metalColor; ambientOcclusionMap:#metalOCC; roughnessMap:#metalRough; metalnessMap: #metalMetalic; roughness:1; ambientOcclusionMapIntensity: 0.96;  metalness: 1; sphericalEnvMap: #sky"
+          geometry="depth: 0.5; height: 10; width: 10"
+          rotation="-9.110 27.240 9.310"
+        ></a-box>
+        <a-box
+          position="16.738 9.175 28.151"
+          material="normalMap:#metalNormal; src: #metalColor; ambientOcclusionMap:#metalOCC; roughnessMap:#metalRough; metalnessMap: #metalMetalic; roughness:1; ambientOcclusionMapIntensity: 0.96;  metalness: 1; sphericalEnvMap: #sky"
+          geometry="depth: 0.5; height: 10; width: 10"
+          rotation="-9.110 27.240 9.310"
+        ></a-box>
+        <a-box
+          position="18.820 -0.212 28.775"
+          material="normalMap:#metalNormal; src: #metalColor; ambientOcclusionMap:#metalOCC; roughnessMap:#metalRough; metalnessMap: #metalMetalic; roughness:1; ambientOcclusionMapIntensity: 0.96;  metalness: 1; sphericalEnvMap: #sky"
+          geometry="depth: 0.5; height: 10; width: 10"
+          rotation="-9.110 27.240 9.310"
+        ></a-box>
+        <a-box
+          position="27.539 1.007 24.088"
+          material="normalMap:#metalNormal; src: #metalColor; ambientOcclusionMap:#metalOCC; roughnessMap:#metalRough; metalnessMap: #metalMetalic; roughness:1; ambientOcclusionMapIntensity: 0.96;  metalness: 1; sphericalEnvMap: #sky"
+          geometry="depth: 0.5; height: 10; width: 10"
+          rotation="-9.110 27.240 9.310"
+        ></a-box
+      ></a-entity>
+      <!-- robot -->
+      <a-entity class="robot">
+        <a-sphere
+          radius=".3"
+          position="3.04281 1 -8.78771"
+          material="normalMap:#techNormal; ambientOcclusionMap:#techOCC; roughnessMap:#techRough; metalnessMap: #techMetal; ambientOcclusionMapIntensity: -10.47;  metalness: 0.57; sphericalEnvMap: #sky; height: 258.51; normalScale: -1.46 1; normalTextureOffset: 1.36 0; roughness: 1;  src: #techColor"
+          geometry=""
+          animation="property: rotation; easing: linear; dir: normal; dur: 10000; loop: true; from: 0 0 0; to: 0 360 0"
+        >
+        </a-sphere>
+        <a-sphere
+          radius=".5"
+          position="3.04281 0.5 -8.78771"
+          material="normalMap:#techNormal; ambientOcclusionMap:#techOCC; roughnessMap:#techRough; metalnessMap: #techMetal; ambientOcclusionMapIntensity: -10.47;  metalness: 0.57; sphericalEnvMap: #sky; height: 258.51; normalScale: -1.46 1; normalTextureOffset: 1.36 0; roughness: 1;  src: #techColor"
+        >
+        </a-sphere>
+      </a-entity>
+
+      <a-sphere
+        radius="1"
+        position="1.31 0.9 8.1"
+        material="normalMap:#techNormal; ambientOcclusionMap:#techOCC; roughnessMap:#techRough; metalnessMap: #techMetal; ambientOcclusionMapIntensity: -10.47;  metalness: 0.57; sphericalEnvMap: #sky; height: 258.51; normalScale: -1.46 1; normalTextureOffset: 1.36 0; roughness: 1;  src: #techColor"
+        animation="property: rotation; easing: linear; dir: normal; dur: 10000; loop: true; from: 0 0 0; to: 0 360 0"
+      >
+      </a-sphere>
+      <!-- glowing diamonds -->
+      <a-octahedron
+        class="glowingDiamond"
+        cursor-listener
+        light="color:#85ffd3;type:point;angle:0;penumbra:1;target:#platform;intensity:0.1"
+        radius=".5"
+        position="-10 2 -7"
+        shadow="receive:false"
+        material="emissive:#85ffd3"
+        geometry=""
+        animation="property: rotation; easing: linear; dir: normal; dur: 10000; loop: true; from: 0 0 0; to: 0 360 0"
+        animation__click=" startEvents: click; property: position; easing: linear; dir: alternate; dur: 5000; loop: true; to: -10 4 -7"
+      ></a-octahedron>
+      <a-octahedron
+        class="glowingDiamond"
+        cursor-listener
+        light="color:#85ffd3;type:point;angle:0;penumbra:1;target:#platform;intensity:0.1"
+        radius=".5"
+        position="-0.964 2 25.463"
+        shadow="receive:false"
+        material="emissive:#85ffd3"
+        geometry=""
+        animation="property: rotation; easing: linear; dir: normal; dur: 10000; loop: true; from: 0 0 0; to: 0 360 0"
+        animation__click=" startEvents: click; property: position; easing: linear; dir: alternate; dur: 5000; loop: true; to: -0.964 4 25.463"
+      ></a-octahedron>
+      <a-octahedron
+        class="glowingDiamond"
+        cursor-listener
+        light="color:#85ffd3;type:point;angle:0;penumbra:1;target:#platform;intensity:0.1"
+        radius=".5"
+        position="6 2 17"
+        shadow="receive:false"
+        material="emissive:#85ffd3"
+        geometry=""
+        animation="property: rotation; easing: linear; dir: normal; dur: 10000; loop: true; from: 0 0 0; to: 0 360 0"
+        animation__click=" startEvents: click; property: position; easing: linear; dir: alternate; dur: 5000; loop: true; to: 6 4 17"
+      ></a-octahedron>
+    </a-scene>
+  </body>
+</html>
